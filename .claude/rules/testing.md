@@ -38,3 +38,12 @@ alwaysApply: false
 
 - Minimum thresholds: lines 60%, branches 70%, functions 63%, statements 60%
 - New code should meet or exceed these thresholds
+
+## How to Verify
+
+- Run `yarn test:app --watch=false` — all tests must pass
+- Run `yarn test:app --coverage` — check thresholds are met for changed files
+- Grep test files for `.skip`, `.todo`, `.only` — should not be committed
+- Grep for `setTimeout` in test files — should use `waitFor`/`findBy` instead
+- Grep for `toMatchSnapshot` — should not exist in new tests
+- Confirm each test file has at least one `describe` and meaningful `it` names

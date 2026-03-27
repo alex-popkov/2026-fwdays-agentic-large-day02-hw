@@ -39,3 +39,12 @@
 - No `shell: true` in child process calls with user-supplied arguments
 - No regex with user input without escaping (ReDoS risk)
 - No deserialization of untrusted data without schema validation
+
+## How to Verify
+
+- Grep for `dangerouslySetInnerHTML`, `eval(`, `new Function(`, `innerHTML` in changed files
+- Grep for hardcoded strings that look like keys/tokens (patterns: `sk-`, `api_key`, `secret`)
+- Grep for `Math.random()` in security-sensitive paths — should use `crypto.getRandomValues()`
+- Grep for `http://` in fetch/request calls — should be `https://`
+- Run `yarn audit` to check for known dependency vulnerabilities
+- Check `.gitignore` includes `.env*` patterns

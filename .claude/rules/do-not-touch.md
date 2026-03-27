@@ -18,3 +18,9 @@ Changes to protected files require:
 1. Full understanding of dependencies
 2. Running complete test suite
 3. Manual QA verification
+
+## How to Verify
+
+- Run `git diff --name-only` and check none of the protected files appear in the changeset
+- If a protected file was modified, confirm explicit user approval exists in the conversation
+- Run `yarn test:app --watch=false` to ensure no regressions after any approved changes

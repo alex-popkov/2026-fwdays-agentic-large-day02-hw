@@ -22,3 +22,10 @@ alwaysApply: false
 
 - No new npm packages without explicit approval
 - Check packages/utils/ before adding external helpers
+
+## How to Verify
+
+- Grep changed files for `Redux`, `Zustand`, `MobX`, `useSelector`, `useDispatch` — should not exist
+- Grep for `react-konva`, `fabric`, `pixi` in `package.json` — should not exist
+- Grep for state mutations outside `actionManager.dispatch()` in `packages/excalidraw/`
+- Run `yarn test:app --watch=false` to verify rendering pipeline is intact

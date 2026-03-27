@@ -23,3 +23,10 @@ alwaysApply: false
 
 - kebab-case for files: `element-utils.ts`
 - PascalCase for components: `LayerUI.tsx`
+
+## How to Verify
+
+- Run `yarn test:code` — ESLint checks import order, consistent type imports, and naming
+- Run `yarn test:other` — Prettier checks file formatting
+- Grep for `export default` in changed files — should not exist
+- Grep for `import { ... } from "..."` without `type` keyword on type-only imports
