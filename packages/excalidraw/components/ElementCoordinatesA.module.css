@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 12px;
+  font-family: var(--ui-font);
+  font-size: 12px;
+  color: var(--color-on-surface);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--color-on-surface);
+  min-width: 60px;
+}
+
+.value {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-on-surface);
+}
+
+.empty {
+  color: var(--color-gray-40);
+  font-style: italic;
+}
