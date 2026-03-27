@@ -16,12 +16,13 @@ yarn
 yarn start
 
 # Build
-yarn build              # Full app build
+yarn build              # Full app build (Vite for app, esbuild for packages)
 yarn build:packages     # Build all packages (common → math → element → excalidraw)
 
 # Tests
 yarn test:app           # Vitest in watch mode
 yarn test:app --watch=false  # Single run
+yarn test:update        # Run all tests with snapshot updates
 vitest run packages/excalidraw/tests/someFile.test.tsx  # Single test file
 yarn test:all           # Typecheck + lint + prettier + tests
 yarn test:typecheck     # tsc only
